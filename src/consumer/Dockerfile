@@ -1,12 +1,11 @@
-FROM python:3.8-slim
+FROM python:3.10-alpine
 RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN pip freeze > requirements.txt
 RUN pip install -r requirements.txt
 WORKDIR /src
-RUN pip install Flask
-COPY /src .
-EXPOSE 8000
+RUN pip install requests
+COPY consumer.py .
 ENTRYPOINT ["python"]
-CMD ["-u","app.py"]
+CMD ["consumer.py"]
 
 
