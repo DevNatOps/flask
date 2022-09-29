@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: challenge-flask-app
   namespace: devops
+type: NodePort
 spec:
   selector:
     app: challenge-flask-app
-    role: web
   ports:
     - name: http
       port: 8000

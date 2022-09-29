@@ -4,7 +4,7 @@ metadata:
   name: challenge-flask-app
   namespace: devops
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: challenge-flask-app
@@ -16,9 +16,6 @@ spec:
       containers:
         - name: challenge-flask-app
           image: flask-challenge-app
-          ports:
-            - name: app-port
-              containerPort: 8000
           resources:
             requests:
               memory: 128Mi
@@ -28,11 +25,15 @@ spec:
               cpu: 200m
           readinessProbe:
             initialDelaySeconds: 10
-            httpGet:
-              port: app-port
-              path: /
+              exec:
+                command:
+                  - /bin/sh
+                  - -c
+                  - echo hola mundo
           livenessProbe:
             initialDelaySeconds: 10
-            httpGet:
-              port: app-port
-              path: /
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                -  echo hola mundo
