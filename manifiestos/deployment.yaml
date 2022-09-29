@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: challenge-flask-app
-          image: flask-challenge-app
+          image: natalita82/flask-challenge-app
           ports:
             - name: app-port
               containerPort: 8000
