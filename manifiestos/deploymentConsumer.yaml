@@ -25,11 +25,11 @@ spec:
               cpu: 200m
           readinessProbe:
             initialDelaySeconds: 10
-              exec:
-                command:
-                  - /bin/sh
-                  - -c
-                  - echo hola mundo
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - echo hola mundo
           livenessProbe:
             initialDelaySeconds: 10
             exec:
