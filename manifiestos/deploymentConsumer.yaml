@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: challenge-flask-consumer
+  name: challenge-flask-consumer2
   namespace: devops
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: challenge-flask-consumer
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: challenge-flask-consumer
-          image: natalita82/flask-challenge-consumer
+          image: natalita82/flask-challenge-consumer:1.0
           resources:
             requests:
               memory: 128Mi
