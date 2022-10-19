@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: challenge-flask-app
+  name: challenge-flask
   namespace: devops
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: challenge-flask-app
+      app: challenge-flask-app3
   template:
     metadata:
       labels:
-        app: challenge-flask-app
+        app: challenge-flask-app3
     spec:
       containers:
-        - name: challenge-flask-app
+        - name: challenge-flask-app3
           image: natalita82/flask-challenge-app:1.0
           ports:
             - name: app-port
