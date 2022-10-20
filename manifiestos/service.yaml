@@ -8,5 +8,6 @@ spec:
   selector:
     app: challenge-flask-app
   ports:
-    - name: http
-      port: 8000
+    - nodePort: 30163
+      port: 80
+      targetPort: 8000
