@@ -1,17 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: challenge-flask-consumer
+  name: challenge-flask-consumer-deployment
   namespace: devops
+  labels:
+    app-name: flask-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: challenge-flask-consumer
+      app-name: flask-app
   template:
     metadata:
       labels:
-        app: challenge-flask-consumer
+        app-name: flask-app
     spec:
       containers:
         - name: challenge-flask-consumer
